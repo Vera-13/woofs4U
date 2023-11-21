@@ -1,7 +1,10 @@
-<h1>Add a dog to the list</h1>
-<%= simple_form_for [@user, @dog] do |f| %>
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.input :address %>
-<%= f.submit %>
-<% end %>
+ <div class="container">
+  <h1>Add a dog</h1>
+
+  <%= simple_form_for [@user, @dog] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.submit %>
+  <% end %>
+</div>

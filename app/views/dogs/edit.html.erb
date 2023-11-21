@@ -1,6 +1,14 @@
-<%= simple_form_for(dog) do |f| %>
+<div class="container">
+
+  <h1>Edit Dog Profile</h1>
+
+  <%= simple_form_for [@user, @dog] do |f| %>
   <%= f.input :name %>
-  <%= f.input :description %>
   <%= f.input :address %>
+  <%= f.input :description %>
   <%= f.submit %>
-<% end %>
+  <% end %>
+
+  <%= link_to 'Show', @dog, class: 'btn' %> |
+  <%= link_to 'Back', dogs_path, class: 'btn' %>
+</div>
