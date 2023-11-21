@@ -1,15 +1,24 @@
-<h1>All the dogs</h1>
+<div class="container">
 
-
+<div class="span">
+<h1>Discover our cute dogs</h1>
 <%= link_to "Add dog", new_dog_path(@dog), class: 'btn btn-primary' %>
+</div>
 
-<%= current_user.email %>
 
 
-<% @dogs.each do |dog| %>
-<div class="one_card">
-    <%= link_to dog.name, dog_path(dog) %>
-    <%= dog.description %>
-    <%= dog.address %>
+
+<div class="card-dogs">
+  <% @dogs.each do |dog| %>
+    <div class="card-dog">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-dog-infos">
+      <h2><%= link_to dog.name, dog_path(dog) %></h2>
+    </div>
     </div>
   <% end %>
+</div>
+
+
+
+</div>
