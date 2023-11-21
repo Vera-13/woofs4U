@@ -1,13 +1,15 @@
 <h1>All the dogs</h1>
 
 
-  <%= link_to "Add dog", new_dog_path(@dog), class: 'btn btn-primary' %>
+<%= link_to "Add dog", new_dog_path(@dog), class: 'btn btn-primary' %>
 
 <%= current_user.email %>
 
 
 <% @dogs.each do |dog| %>
-    <li><%= dog.name %></li>
-    <li><%= dog.description %></li>
-    <li><%= dog.address %></li>
+<div class="one_card">
+    <%= link_to dog.name, dog_path(dog) %>
+    <%= dog.description %>
+    <%= dog.address %>
+    </div>
   <% end %>
