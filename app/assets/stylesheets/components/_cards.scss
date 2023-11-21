@@ -1,18 +1,24 @@
 
 .span {
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   h1{
     margin-left: 20px;
   }
-  .btn{
-    margin-left: 20px;;
-  }
+}
+
+.button{
+  margin-top: 15px;
 }
 
 .card-dogs {
   margin: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 .card-dog {
