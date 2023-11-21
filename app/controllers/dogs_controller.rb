@@ -11,7 +11,15 @@ class DogsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
+  def index
+    @dogs = Dog.all
+  end
 
+  def show
+    @dog = Dog.find(params[:id])
+  end
+  
   def edit
     @dog = Dog.find(params[:id])
   end
