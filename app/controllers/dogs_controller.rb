@@ -8,16 +8,15 @@ class DogsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:id])
     @dog = Dog.new
   end
 
   def create
-    @user = User.find(params[:id])
     @dog = Dog.new(dog_params)
-    @dog.user = @user
+    @dog.user = current_user
+
     if @dog.save
-      redirect dog_path(@dog)
+      redirect_to dog_path(@dog)
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +29,7 @@ class DogsController < ApplicationController
   def update
     @dog = Dog.find(params[:id])
     if @dog.update(dog_params)
-      redirect dog_path(@dog)
+      redirect_to dog_path(@dog)
     else
       render :edit, status: :unprocessable_entity
     end

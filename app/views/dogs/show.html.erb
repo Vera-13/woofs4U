@@ -1,11 +1,16 @@
-<h2><%= @dog.name %></h2>
-<p><%= @dog.description %></p>
-<p><%= @dog.address %></p>
+<div class="container">
+  <div class="card_show">
+      <h1><%= @dog.name %></h1>
+      <p><h5>Address:</h5> <%= @dog.address %></p>
+      <p><h5>Description:</h5> <%= @dog.description %></p>
 
-<div>
-  <%= link_to "New dog", new_dog_path(@list), class: 'btn btn-primary' %>
-  <%= link_to "Back", dogs_path, class: 'btn btn-primary' %> |
-  <%= link_to "Delete",
-    dog_path(@ldog), class: 'btn btn-primary',
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <div>
+        <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %>
+        <%= link_to "Back", dogs_path, class: 'btn' %> |
+        <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
+        <%= link_to "Delete",
+          dog_path(@dog), class: 'btn',
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+  </div>
 </div>
