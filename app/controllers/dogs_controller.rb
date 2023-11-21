@@ -3,6 +3,14 @@ class DogsController < ApplicationController
     @dog = Dog.new
   end
 
+  def index
+    @dogs = Dog.all
+  end
+
+  def show
+    @dog = Dog.find(params[:id])
+  end
+
   def create
     @dog = Dog.new(dog_params)
     if @dog.save
@@ -11,15 +19,7 @@ class DogsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
-  def index
-    @dogs = Dog.all
-  end
 
-  def show
-    @dog = Dog.find(params[:id])
-  end
-  
   def edit
     @dog = Dog.find(params[:id])
   end
