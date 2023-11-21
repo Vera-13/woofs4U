@@ -3,9 +3,9 @@
 <p><%= @dog.address %></p>
 
 <div>
-  <%= link_to "New dog", new_dog_path(@list), class: 'btn btn-primary' %>
+  <%= link_to "New dog", new_dog_path(@dog), class: 'btn btn-primary' %>
   <%= link_to "Back", dogs_path, class: 'btn btn-primary' %> |
   <%= link_to "Delete",
-    dog_path(@ldog), class: 'btn btn-primary',
+    dog_path(@dog), class: 'btn btn-primary',
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 </div>
