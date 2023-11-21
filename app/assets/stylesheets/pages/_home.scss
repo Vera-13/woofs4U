@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+
+.card-logo {
+  width: 400;
+  height: auto;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-image: url('background.png');
+  background-size: cover; /* Cover the entire viewport */
+
+}
