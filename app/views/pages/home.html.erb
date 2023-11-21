@@ -4,5 +4,9 @@
   <%= image_tag "woof4ulogo.png" , alt: 'logo', class: "card-logo" %>
   </div>
 </div>
-<h1>Bring someone else's puppy around</h1>
-<h1>Why? Why not</h1>
+<% if user_signed_in? %>
+  <%= link_to "Discover all the dogs", dogs_path, class: "nav-link" %>
+<% else%>
+  <h1 class="h1">Bring someone else's puppy around</h1>
+  <h1 class="h1">Why? Why not</h1>
+<% end %>
