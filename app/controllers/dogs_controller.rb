@@ -8,19 +8,14 @@ class DogsController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:id])
     @dog = Dog.new
   end
 
-  def index
-    @dogs = Dog.all
-  end
-
-  def show
-    @dog = Dog.find(params[:id])
-  end
-
   def create
+    @user = User.find(params[:id])
     @dog = Dog.new(dog_params)
+    @dog.user = @user
     if @dog.save
       redirect dog_path(@dog)
     else
@@ -41,15 +36,15 @@ class DogsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @dog = Dog.find(params[:id])
     @dog.destroy
-    redirect_to dogs_path
+    redirect_to dogs_path, status: :see_other
   end
 
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :description, :address)
+    params.require(:dog).permit(:name, :description, :address, :user_id)
   end
 end
