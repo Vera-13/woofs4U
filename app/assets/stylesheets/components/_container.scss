@@ -24,7 +24,11 @@ h1 {
 
 h5 {
   font-family: $h1-font;
-  font-size: 20px;
+}
+
+h4 {
+  font-family: $h1-font;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.2;
   color: rgb(213, 196, 123);
@@ -34,4 +38,10 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 2px;
   word-spacing: 5px;
-  text-shadow: 1px 1px 2px rgb(213, 196, 123);}
+  text-shadow: 1px 1px 2px rgb(213, 196, 123);
+}
+
+p {
+  font-family: $h1-font;
+  font-size: 10px;
+}
