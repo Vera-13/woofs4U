@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container_show">
   <div class="card_show">
       <h1><%= @dog.name %></h1>
       <p><h5>Address:</h5> <%= @dog.address %></p>
       <p><h5>Description:</h5> <%= @dog.description %></p>
 
       <div>
-        <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %>
+        <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %> |
         <%= link_to "Back", dogs_path, class: 'btn' %> |
         <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
         <%= link_to "Delete",
@@ -13,4 +13,12 @@
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
       </div>
   </div>
+
+  <div class="card_show">
+      <%= image_tag "Labradoodle.jpeg" , alt: 'dog', class: "img_show" %>
+  </div>
+
+  <div class="map">
+  </div>
+
 </div>
