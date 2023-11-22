@@ -1,15 +1,20 @@
 class BookingsController < ApplicationController
   def new
-    @booking = Booking.find(params[:id])
+    @dog = Dog.find(params[:dog_id])
+    @dog.user = current_user
     @booking = Booking.new
   end
 
   def create
-    @dog = Dog.find(params[:id])
+    @dog = Dog.find(params[:dog_id])
     @booking = Booking.new(booking_params)
     @booking.dog = @dog
-    @booking.save
-    redirect_to dog_path(@dog)
+    @booking.user = current_user
+    if @booking.save
+      redirect_to dog_path(@dog)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy

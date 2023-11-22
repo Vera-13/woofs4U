@@ -6,11 +6,17 @@
 
       <div>
         <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %> |
+        <%= link_to "Book a walk", new_dog_booking_path(@dog), class: 'btn' %> |
         <%= link_to "Back", dogs_path, class: 'btn' %> |
         <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
         <%= link_to "Delete",
           dog_path(@dog), class: 'btn',
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+      <div>
+        <% @dog.bookings.each do |booking| %>
+        <% booking.date %>
+        <% end %>
       </div>
   </div>
 
