@@ -13,7 +13,6 @@
 <div class="card-dogs">
   <% @dogs.each do |dog| %>
     <div class="card-dog">
-    <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
     <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-dog-infos">
         <h2><%= link_to dog.name, dog_path(dog) %></h2>
