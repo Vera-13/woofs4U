@@ -3,49 +3,46 @@
       <h1><%= @dog.name %></h1>
       <p><h5>Address:</h5> <%= @dog.address %></p>
       <p><h5>Description:</h5> <%= @dog.description %></p>
-
       <div>
-        <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %> |
         <%= link_to "Book a walk", new_dog_booking_path(@dog), class: 'btn' %> |
-        <%= link_to "Back", dogs_path, class: 'btn' %> |
         <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
-        <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %> |
         <%= link_to "Delete",
           dog_path(@dog), class: 'btn',
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> |
+        <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %> |
+        <%= link_to "Back", dogs_path, class: 'btn' %>
       </div>
-
+      <div class="map">
+        <div style="width: 100%; height: 200px;"
+          data-controller="map"
+          data-map-marker-value="<%= @marker.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      </div>
   </div>
-
   <div class="card_show">
- 
       <div>
         <% @dog.bookings.each do |booking| %>
         <% booking.date %>
         <% end %>
-      <hr>
-      <div class="div">
+        </div>
+
+
+  <div class="container">
+  <div class="card_show">
+    <% if @dog.photo.attached?  %>
+      <%= cl_image_tag @dog.photo.key , alt: 'dog', class: "img_show" %>
+      <% else %>
+      <%= image_tag "defaultimage.png",  alt: 'dog', class: "img_show" %>
+      <% end %>
+  </div>
+
       <% @dog.reviews.each do |review| %>
-      <p id="rating-text">
-      <%= review.rating %> <i class="fa-solid fa-star"></i>
-      <%= review.comment %> by <%= review.user.first_name %> <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
-      </p>
+        <p id="rating-text">
+          <%= review.rating %> <i class="fa-solid fa-star"></i>
+          <%= review.comment %> by <%= review.user.first_name %>
+        </p>
       <% end %>
       </div>
-  </div>
-
-  <div class="card_show">
-      <%= cl_image_tag @dog.photo.key , alt: 'dog', class: "img_show" %>
-  </div>
-
-
-      <div class="map">
-      <div style="width: 100%; height: 200px;"
-        data-controller="map"
-        data-map-marker-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
-    
   </div>
 </div>
