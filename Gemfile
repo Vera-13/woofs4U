@@ -76,4 +76,6 @@ end
 
 gem "devise"
 
+gem "dotenv-rails"
+
 gem "cloudinary"
