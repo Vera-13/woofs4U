@@ -18,22 +18,36 @@
           data-map-marker-value="<%= @marker.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          <br>
+          <div class="bookings-card">
+          <h5> Bookings: </h5>
+            <ol>
+                <% @dog.bookings.sort_by(&:date).each do |booking| %>
+                <li><%= booking.date.strftime('%d-%m-%Y') %></li>
+                <% end %>
+            </ol>
+          </div>
       </div>
   </div>
   <div class="card_show">
       <div>
-        <% @dog.bookings.each do |booking| %>
-        <% booking.date %>
-        <% end %>
-        </div>
+      <hr>
+      <div class="div">
+      <% @dog.reviews.each do |review| %>
+      <p id="rating-text">
+      <%= review.rating %> <i class="fa-solid fa-star"></i>
+      <%= review.comment %> by <%= review.user.first_name %> <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
+      </p>
+      <% end %>
+      </div>
+  </div>
 
-  <div class="card_show">
     <% if @dog.photo.attached?  %>
       <%= cl_image_tag @dog.photo.key , alt: 'dog', class: "img_show" %>
       <% else %>
       <%= image_tag "defaultimage.png",  alt: 'dog', class: "img_show" %>
       <% end %>
-
        <div class="div">
         <% @dog.reviews.each do |review| %>
         <p id="rating-text">
@@ -43,6 +57,5 @@
       <% end %>
   </div>
   </div>
-
   </div>
 </div>
