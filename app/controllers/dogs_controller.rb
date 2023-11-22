@@ -5,6 +5,15 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @marker =
+      if @dog.latitude && @dog.longitude
+      {
+        lat: @dog.latitude,
+        lng: @dog.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {dog: @dog}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def new

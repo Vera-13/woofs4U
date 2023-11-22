@@ -7,17 +7,14 @@
 </div>
 </div>
 
-
-
-
 <div class="card-dogs">
   <% @dogs.each do |dog| %>
     <div class="card-dog">
     <% if dog.photo.attached? %>
     <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else  %>
-    <%= image_tag "defaultimage.png", height: 300, width: 400, crop: :fill %>
-    <% end %>
+    <% else %>
+     <%= image_tag "defaultimage.png" , height: 300, width: 400, crop: :fill %>
+     <% end %>
       <div class="card-dog-infos">
         <h2><%= link_to dog.name, dog_path(dog) %></h2>
       </div>

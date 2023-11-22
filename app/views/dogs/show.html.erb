@@ -15,6 +15,10 @@
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
       </div>
 
+  </div>
+
+  <div class="card_show">
+ 
       <div>
         <% @dog.bookings.each do |booking| %>
         <% booking.date %>
@@ -34,7 +38,14 @@
       <%= cl_image_tag @dog.photo.key , alt: 'dog', class: "img_show" %>
   </div>
 
-  <div class="map">
-  </div>
 
+      <div class="map">
+      <div style="width: 100%; height: 200px;"
+        data-controller="map"
+        data-map-marker-value="<%= @marker.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+    
+  </div>
 </div>

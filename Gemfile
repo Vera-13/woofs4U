@@ -80,3 +80,7 @@ gem "devise"
 gem "dotenv-rails"
 
 gem "cloudinary"
+
+gem "geocoder"
+
+gem "dotenv-rails"
