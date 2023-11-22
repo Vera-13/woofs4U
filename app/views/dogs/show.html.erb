@@ -19,13 +19,17 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       </div>
+       <div class="bookings-card">
+          <h5> Bookings: </h5>
+            <ol>
+                <% @dog.bookings.sort_by(&:date).each do |booking| %>
+                <li><%= booking.date.strftime('%d-%m-%Y') %></li>
+                <% end %>
+            </ol>
+          </div>
+
   </div>
-  <div class="card_show">
-      <div>
-        <% @dog.bookings.each do |booking| %>
-        <% booking.date %>
-        <% end %>
-        </div>
+
 
 
   <div class="container">
