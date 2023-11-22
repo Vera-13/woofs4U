@@ -6,6 +6,7 @@
 
       <div>
         <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %> |
+        <%= link_to "Book a walk", new_dog_booking_path(@dog), class: 'btn' %> |
         <%= link_to "Back", dogs_path, class: 'btn' %> |
         <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
         <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %> |
@@ -13,6 +14,11 @@
           dog_path(@dog), class: 'btn',
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
       </div>
+
+      <div>
+        <% @dog.bookings.each do |booking| %>
+        <% booking.date %>
+        <% end %>
       <hr>
       <div class="div">
       <% @dog.reviews.each do |review| %>
