@@ -8,14 +8,24 @@
         <%= link_to "Add new dog", new_dog_path(@dog), class: 'btn' %> |
         <%= link_to "Back", dogs_path, class: 'btn' %> |
         <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
+        <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %> |
         <%= link_to "Delete",
           dog_path(@dog), class: 'btn',
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
       </div>
+      <hr>
+      <div class="div">
+      <% @dog.reviews.each do |review| %>
+      <p id="rating-text">
+      <%= review.rating %> <i class="fa-solid fa-star"></i>
+      <%= review.comment %> by <%= review.user.first_name %> <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
+      </p>
+      <% end %>
+      </div>
   </div>
 
   <div class="card_show">
-      <%= image_tag "Labradoodle.jpeg" , alt: 'dog', class: "img_show" %>
+      <%= cl_image_tag @dog.photo.key , alt: 'dog', class: "img_show" %>
   </div>
 
   <div class="map">
