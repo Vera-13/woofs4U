@@ -39,14 +39,17 @@
       <% else %>
       <%= image_tag "defaultimage.png",  alt: 'dog', class: "img_show" %>
       <% end %>
-  </div>
 
-      <% @dog.reviews.each do |review| %>
+  </div>
+       <div class="div">
+        <% @dog.reviews.each do |review| %>
         <p id="rating-text">
-          <%= review.rating %> <i class="fa-solid fa-star"></i>
-          <%= review.comment %> by <%= review.user.first_name %>
+        <%= review.rating %> <i class="fa-solid fa-star"></i>
+        <%= review.comment %> by <%= review.user.first_name %>
         </p>
       <% end %>
-      </div>
+  </div>
+  </div>
+
   </div>
 </div>
