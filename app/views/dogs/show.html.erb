@@ -36,12 +36,7 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-
-</div>
-      
-  </div>
-
-  <div>
+      <div>
       <div class="card_show">
       <% if @dog.photo.attached?  %>
           <%= cl_image_tag @dog.photo.key , alt: 'dog', class: "img_show" %>
@@ -49,7 +44,6 @@
           <%= image_tag "defaultimage.png",  alt: 'dog', class: "img_show" %>
       <% end %>
     </div>
-
 
       <div class="div">
         <% @dog.reviews.each do |review| %>
