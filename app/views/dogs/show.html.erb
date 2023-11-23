@@ -10,7 +10,7 @@
       </div>
 
       <div>
-        <%= link_to "Book a walk", new_dog_booking_path(@dog), class: 'btn' %> |
+        <%= link_to "Book a walk", new_dog_booking_path(@dog), class: 'btn' %>
         <% if @dog.user_id == current_user.id %>
           <%= link_to "Edit", edit_dog_path(@dog), class: 'btn' %> |
           <%= link_to "Delete",
