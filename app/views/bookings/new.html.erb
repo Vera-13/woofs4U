@@ -1,4 +1,13 @@
-<%= simple_form_for [@user, @dog, @booking] do |f| %>
-  <%= f.input :date %>
-  <%= f.submit "Submit Booking", class: "btn" %>
-<% end %>
+  <h1>Choose your date</h1>
+
+
+<div class="container_book">
+  <%= simple_form_for [@user, @dog, @booking] do |f| %>
+    <%= f.input :date,
+        as: :string,
+        input_html: { data: { controller: "datepicker" } } %>
+    <%= f.submit "Book", class: "btn" %> |
+    <%= link_to "Back", dog_path(@dog), class: 'btn' %>
+
+  <% end %>
+</div>
