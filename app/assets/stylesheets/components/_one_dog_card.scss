@@ -1,0 +1,54 @@
+.one-dog {
+  margin-top: 20px;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+
+  padding: 10px;
+  #dog-buttons {
+    margin-left: 50px;
+    display: flex;
+    display: inline-block;
+
+  }
+  .ph-btn {
+    flex-direction: column;
+   }
+}
+
+.one-dog img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.one-dog h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.one-dog p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.one-dog .one-dog-infos {
+  padding: 16px;
+}
+
+#dog-buttons {
+  margin-top: 20px;
+  display: flex;
+  display: inline-block;
+}
+.right {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
