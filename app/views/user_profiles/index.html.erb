@@ -1,0 +1,21 @@
+<div class="box">
+  <h1>My Bookings</h1>
+  <% current_user.bookings.each do |booking| %>
+    <div class="card-box">
+      <div class="text">
+        <h5><%= booking.dog.name %></h5>
+        <h6><%= booking.date %></h6>
+        <h6><%= booking.dog.address %></h6>
+      </div>
+      <div>
+      <% if booking.dog.photo.attached? %>
+      <%= cl_image_tag booking.dog.photo.key, width: 120, height: 120, crop: :fill %>
+      <% else %>
+      <%= image_tag "defaultimage.png" , class: "avatar"%>
+      <% end %>
+      </div>
+
+    </div>
+  <% end %>
+
+</div>
