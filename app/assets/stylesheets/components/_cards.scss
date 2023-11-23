@@ -57,12 +57,13 @@
 .box {
 
 
+
 .card-box {
   margin: 1px solid;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 100px;
+  margin-right: 100px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -70,10 +71,12 @@
   .text {
     padding: 20px;
   }
-   img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
+
 }
+}
+
+.img-dog {
+  width: auto;
+  height: auto;
+  object-fit: cover;
 }

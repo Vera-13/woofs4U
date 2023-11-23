@@ -28,8 +28,6 @@
           data-map-marker-value="<%= @marker.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-          <br>
-          <div
 </div>
           <%= link_to "Back", dogs_path, class: 'btn' %>
       </div>
@@ -41,7 +39,7 @@
       <% @dog.reviews.each do |review| %>
       <p id="rating-text">
       <%= review.rating %> <i class="fa-solid fa-star"></i>
-      <%= review.comment %> by <%= review.user.first_name %> <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
+      <%= review.comment %> by <%= review.user.first_name %>
       </p>
       <% end %>
       </div>

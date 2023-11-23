@@ -9,16 +9,18 @@
 
 <div class="card-dogs">
   <% @dogs.each do |dog| %>
-    <div class="card-dog">
-      <% if dog.photo.attached? %>
-        <%= cl_image_tag dog.photo.key, height: 200, width: 200, crop: :fill %>
-      <% else %>
-        <%= image_tag "defaultimage.png" , height: 200, width: 200, crop: :fill %>
+      <%= link_to dog_path(dog) do %>
+        <div class="card-dog">
+          <% if dog.photo.attached? %>
+            <%= cl_image_tag dog.photo.key, height: 200, width: 200, crop: :fill %>
+          <% else %>
+            <%= image_tag "defaultimage.png" , height: 200, width: 200, crop: :fill %>
+          <% end %>
+          <div class="card-dog-infos">
+            <h2> <%= dog.name %> </h2>
+          </div>
+        </div>
       <% end %>
-      <div class="card-dog-infos">
-        <h2><%= link_to dog.name, dog_path(dog), class: 'btn' %></h2>
-      </div>
-    </div>
   <% end %>
 
 </div>
