@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :destroy]
     resources :reviews, only: [:new, :create, :destroy]
   end
+
+  get "users/:id", to: "user_profiles#index", as: :user_profile
 end

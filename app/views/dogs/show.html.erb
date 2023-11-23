@@ -9,8 +9,7 @@
         <%= link_to "Delete",
           dog_path(@dog), class: 'btn',
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> |
-        <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %> |
-        <%= link_to "Back", dogs_path, class: 'btn' %>
+        <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %>
       </div>
       <div class="map">
         <div style="width: 100%; height: 200px;"
@@ -19,15 +18,6 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       </div>
-       <div class="bookings-card">
-          <h5> Bookings: </h5>
-            <ol>
-                <% @dog.bookings.sort_by(&:date).each do |booking| %>
-                <li><%= booking.date.strftime('%d-%m-%Y') %></li>
-                <% end %>
-            </ol>
-          </div>
-
   </div>
 
 
