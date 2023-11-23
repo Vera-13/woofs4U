@@ -15,10 +15,12 @@
           </div>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= link_to user_profile_path(current_user) do %>
             <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
             <% else %>
             <%= image_tag "defaultimage.png" , class: "avatar", alt: "dropdown menu" %>
+            <% end %>
             <% end %>
 
           </a>

@@ -2,14 +2,14 @@
 
   <h1>My Bookings</h1>
   <% current_user.bookings.each do |booking| %>
-      <div class="div">
+
+      <%= link_to dog_path(booking.dog) do %>
     <div class="card-box">
       <div class="text">
         <h5><%= booking.dog.name %></h5>
         <h6><%= booking.date %></h6>
         <h6><%= booking.dog.address %></h6>
       </div>
-      <%= link_to dog_path(booking.dog) do %>
         <div id="img-dog">
         <% if booking.dog.photo.attached? %>
         <%= cl_image_tag booking.dog.photo.key, crop: :fill %>
@@ -19,7 +19,7 @@
         </div>
     </div>
         <% end %>
-        </div>
+
       <% end %>
 
 </div>
