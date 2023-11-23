@@ -1,12 +1,12 @@
-<div class="container">
-  <h1>Add a dog</h1>
+<h1>Add a dog</h1>
+<div class="container_newdog">
 
   <%= simple_form_for [@user, @dog] do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :description %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit class:'btn' %> |
+  <%= f.submit "Add dog profile", class:'btn' %> |
   <%= link_to "Back", dogs_path, class: 'btn' %>
   <% end %>
 
