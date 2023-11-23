@@ -71,12 +71,21 @@
   .text {
     padding: 20px;
   }
-
+  #img-dog {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    img {
+      width: 200px;
+    height: 100%;
+    object-fit: cover;
+    }
+  }
 }
 }
 
-.img-dog {
-  width: auto;
-  height: auto;
-  object-fit: cover;
+
+
+a {
+  text-decoration: none;
 }

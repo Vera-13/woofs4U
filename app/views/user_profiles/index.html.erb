@@ -10,7 +10,7 @@
         <h6><%= booking.dog.address %></h6>
       </div>
       <%= link_to dog_path(booking.dog) do %>
-        <div class="img-dog">
+        <div id="img-dog">
         <% if booking.dog.photo.attached? %>
         <%= cl_image_tag booking.dog.photo.key, crop: :fill %>
         <% else %>
