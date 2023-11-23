@@ -45,3 +45,17 @@ p {
   font-family: $h1-font;
   font-size: 10px;
 }
+
+.address {
+  display: flex;
+  h5 {
+    margin-right:10px;
+  }
+}
+
+.owner {
+  display: flex;
+  h5 {
+    margin-right:10px;
+  }
+}
