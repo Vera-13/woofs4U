@@ -16,10 +16,16 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .card-dog {
   margin: 20px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.card-dog:hover {
+  transform: scale(1.1); /* Scale the card by 10% on hover */
 }
 .card-dog > img {
   height: 200px;
@@ -45,7 +51,9 @@
   width: 40px;
 }
 .box {
-.card-box {
+
+  .card-box {
+
   margin: 1px solid;
   margin-top: 20px;
   margin-bottom: 20px;
