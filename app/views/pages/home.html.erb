@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
 <div class = "container">
-  <%= link_to dogs_path do %>
+    <%= link_to dogs_path do %>
     <div class = "image">
     <%= image_tag "woof4ulogo.png" , alt: 'logo', class: "card-logo" %>
     </div>
-  <% end %>
+    <% end %>
+    <h1 class="h1">Click on the puppy to book a walk with our fluffy friends</h1>
+
+
+
 </div>
-<% if user_signed_in? %>
-<% else%>
-  <h1 class="h1">Bring someone else's puppy around</h1>
-  <h1 class="h1">Why? Why not</h1>
-<% end %>
