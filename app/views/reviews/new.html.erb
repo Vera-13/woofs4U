@@ -1,6 +1,8 @@
-<h1>Create a review</h1>
-<%= simple_form_for [@dog, @review] do |f| %>
-<%= f.input :rating %>
-<%= f.input :comment %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Create a review</h1>
+  <%= simple_form_for [@dog, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :comment %>
+  <%= f.submit "Review", class: 'btn' %>
+  <% end %>
+</div>
