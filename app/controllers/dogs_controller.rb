@@ -1,7 +1,14 @@
 class DogsController < ApplicationController
   def index
     @dogs = Dog.all
+    if params[:query].present?
+      @dogs = @dogs.global_search(params[:query])
+    end
   end
+
+  # def index
+  #   @dogs = Dog.all
+  # end
 
   def show
     @dog = Dog.find(params[:id])
