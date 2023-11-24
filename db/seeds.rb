@@ -5,7 +5,7 @@ Dog.destroy_all
 User.destroy_all
 puts "Cleaned"
 
-50.times do
+5.times do
   user = User.create(
     email: Faker::Internet.email,
     password: "123456",
@@ -15,13 +15,15 @@ puts "Cleaned"
   puts "Created user: #{user.email}"
 end
 
+adr = ["rue de la Presse 17, Bruxelles", "30 Cleveland Way, London", "16 Villa Gaudelet, Paris"].sample
+
 users = User.all
-50.times do
+5.times do
   user = users.sample
   dog = Dog.create(
     name: Faker::Creature::Dog.name,
     description: Faker::Lorem.paragraph(sentence_count: 2),
-    address: Faker::Address.full_address,
+    address: adr,
     user_id: user.id,
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude
