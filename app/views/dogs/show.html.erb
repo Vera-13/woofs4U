@@ -21,7 +21,7 @@
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               <% end %>
 
-              <% if @dog.bookings.where(user_id: current_user.id).exists? %>
+              <% if @dog.bookings.where(user_id: current_user.id).exists? && !@dog.reviews.exists?(user_id: current_user.id) %>
                 <%= link_to "Rate", new_dog_review_path(@dog), class: 'btn' %>
               <% end %>
 
@@ -49,17 +49,24 @@
   </div>
 
     <div class="div-rev">
-      <% if @dog.reviews != [] %>
-       <h4>Reviews</h4>
-          <% @dog.reviews.each do |review| %>
-            <p id="rating-text">
-            <%= review.rating %> <i class="fa-solid fa-star"></i>
-            <%= review.comment %>  by  <%= review.user.first_name %> created at <%= review.created_at.strftime("%Y-%m-%d") %>
-            </p>
-          <% end %>
-      <% else %>
-          <h4>No reviews yet...</h4>
-      <% end %>
+      <% if current_user && @dog.reviews.exists?(user_id: current_user.id) %>
+    <h4>Reviews</h4>
+    <% review = @dog.reviews.find_by(user_id: current_user.id) %>
+    <p id="rating-text">
+      <%= review.rating %> <i class="fa-solid fa-star"></i>
+      <%= review.comment %> by <%= review.user.first_name %> created at <%= review.created_at.strftime("%Y-%m-%d") %>
+    </p>
+  <% elsif @dog.reviews.present? %>
+    <h4>Reviews</h4>
+    <% @dog.reviews.each do |review| %>
+      <p id="rating-text">
+        <%= review.rating %> <i class="fa-solid fa-star"></i>
+        <%= review.comment %> by <%= review.user.first_name %> created at <%= review.created_at.strftime("%Y-%m-%d") %>
+      </p>
+    <% end %>
+  <% else %>
+    <h4>No reviews yet...</h4>
+  <% end %>
     </div>
 
 
