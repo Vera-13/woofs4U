@@ -5,8 +5,19 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  justify-content: flex-end;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.avatar-info{
+  display: flex;
+  flex-direction: row;
+}
+
+.name_user {
+  margin-top: 7px;
+  margin-right: 10px;
 }

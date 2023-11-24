@@ -10,17 +10,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+          <li class="nav-item dropdown">
+          <div class="avatar-info">
           <div class="name_user">
             <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
           </div>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
             <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
             <% else %>
             <%= image_tag "defaultimage.png" , class: "avatar", alt: "dropdown menu" %>
             <% end %>
-
+            </div>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
