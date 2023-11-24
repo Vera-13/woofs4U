@@ -19,10 +19,12 @@
 }
 
 .btn-back {
+  margin-top: 5px;
   font-weight: 500;
   border-radius: 300px;
   text-transform: uppercase;
   color: rgb(213, 196, 123);
+  border-color: rgb(213, 196, 123);
   font-family: $h1-font;
-  font-size: 10px;
+  font-size: 15px;
 }
