@@ -7,9 +7,9 @@
       <div class="text">
         <h5><%= booking.dog.name %></h5>
         <br>
-        <h6><strong>Date: </strong><%= booking.date %></h6>
+        <h6 class="new"><strong>Date: </strong><%= booking.date %></h6>
         <br>
-        <h6><strong>Pick up & Drop off: </strong><%= booking.dog.address %></h6>
+        <h6 class="new"><strong>Pick up & Drop off: </strong><%= booking.dog.address %></h6>
       </div>
         <div id="img-dog">
         <% if booking.dog.photo.attached? %>
