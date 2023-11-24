@@ -1,20 +1,9 @@
 require 'faker'
+
 puts "Cleaning database..."
 Dog.destroy_all
 User.destroy_all
-puts "cleaned"
-
-# puts "Creating dogs..."
-# # dishoom = {name: "Dishoom", address: "7 Boundary St, London E2 7JE", rating: 5}
-# # pizza_east =  {name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", rating: 4}
-
-# # [dishoom, pizza_east].each do |attributes|
-# #   restaurant = Restaurant.create!(attributes)
-# #   puts "Created #{restaurant.name}"
-# # end
-# dog = Dog.create!(name: "Chocopuff", description: "Cute dog with a great personality and fluffy ears.", address: "Rue de la Presse 18 Bruxelles")
-# puts dog.name
-# puts "Finished!"
+puts "Cleaned"
 
 50.times do
   user = User.create(
@@ -37,6 +26,9 @@ users = User.all
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude
   )
+
+  # Attach a photo to the dog
+  dog.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'Labradoodle.jpeg')), filename: 'Labradoodle.jpeg')
 
   puts "Created dog: #{dog.name} for user #{user.first_name}"
 end
