@@ -3,11 +3,11 @@
 <div class="span">
 <h1>Discover our cute dogs</h1>
 
- <div class="row justify-content-center">
+<div class="row justify-content-center">
 
   <div class="">
     <%= form_with url: dogs_path, method: :get, class: "subscription-form" do %>
-       <%= text_field_tag :query,
+      <%= text_field_tag :query,
             params[:query],
             class: "rounded-input",
             placeholder: "Find a dog"

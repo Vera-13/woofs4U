@@ -5,6 +5,12 @@
   max-width: 900px;
   display: flex;
   flex-direction: row;
+  background-color: #f8edeb;
+}
+
+body {
+  background-color: #f8edeb;
+
 }
 
 h1 {
@@ -12,7 +18,7 @@ h1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
-  color: rgb(213, 196, 123);
+  color: rgb(0, 0, 0);
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -40,7 +46,7 @@ h4 {
   font-size: 15px;
   font-weight: 700;
   line-height: 1.2;
-  color: rgb(213, 196, 123);
+  color: rgb(0, 0, 0);
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -79,6 +85,7 @@ p {
   margin-top: 70px;
   justify-content: center;
   align-content: center;
+  background-color: #f8edeb;
 }
 
 .container_rating {
@@ -87,6 +94,7 @@ p {
   margin-top: 70px;
   justify-content: center;
   align-content: center;
+  background-color: #f8edeb;
 }
 
 
@@ -96,11 +104,12 @@ p {
   margin-top: 70px;
   justify-content: center;
   align-content: center;
+  background-color: #f8edeb;
 }
 
 .container_home {
 
-  background-color: rgb(190, 190, 190);
+  background-color: #f8edeb;
   height: 100vh;
 }
 
