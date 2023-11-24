@@ -56,6 +56,12 @@ h4 {
 
 }
 
+new {
+  font-family: $h1-font;
+  font-size: 15px;
+  font-weight: 700;
+}
+
 h5 {
   font-family: $h1-font;
 }
@@ -108,7 +114,6 @@ p {
 }
 
 .container_home {
-
   background-color: #f8edeb;
   height: 100vh;
 }
@@ -118,4 +123,8 @@ p {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: -5%;
+}
+
+.easter {
+  color: #f8edeb;;
 }
