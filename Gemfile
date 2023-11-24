@@ -84,3 +84,5 @@ gem "cloudinary"
 gem "geocoder"
 
 gem "dotenv-rails"
+
+gem "pg_search"

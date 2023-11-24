@@ -2,13 +2,33 @@
 
 <div class="span">
 <h1>Discover our cute dogs</h1>
+
+ <div class="row justify-content-center">
+
+  <div class="">
+    <%= form_with url: dogs_path, method: :get, class: "subscription-form" do %>
+       <%= text_field_tag :query,
+            params[:query],
+            class: "rounded-input",
+            placeholder: "Find a dog"
+        %>
+
+    <div class=>
+      <%= submit_tag "Search", name: "", class: "embedded-button " %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
 <div class="button">
 <%= link_to "Add dog", new_dog_path(@dog), class: 'btn' %>
 </div>
 </div>
-
 <div class="card-dogs">
-  <% @dogs.each do |dog| %>
+  <% if @dogs.any? %>
+    <% @dogs.each do |dog| %>
       <%= link_to dog_path(dog) do %>
         <div class="card-dog">
           <% if dog.photo.attached? %>
@@ -17,14 +37,16 @@
             <%= image_tag "defaultimage.png" , height: 200, width: 200, crop: :fill %>
           <% end %>
           <div class="card-dog-infos">
-          <div class="btn-name">
-            <h4> <%= dog.name %> </h4>
-          </div>
+            <div class="btn-name">
+              <h4> <%= dog.name %> </h4>
+            </div>
           </div>
         </div>
       <% end %>
+    <% end %>
+  <% else %>
+    <em>Sorry, no dogs found.</em>
   <% end %>
-
 </div>
 
 
