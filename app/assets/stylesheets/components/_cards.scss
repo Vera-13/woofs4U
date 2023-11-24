@@ -27,11 +27,11 @@
 .card-dog:hover {
   transform: scale(1.1); /* Scale the card by 10% on hover */
 }
-.card-dog > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+// .card-dog > img {
+//   height: 100%;
+//   width: 200px;
+//   object-fit: cover;
+// }
 .card-dog h2 {
   font-size: 16px;
   font-weight: bold;
@@ -53,7 +53,6 @@
 .box {
 
   .card-box {
-
   margin: 1px solid;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -70,14 +69,15 @@
     width: 200px;
     height: 100%;
     object-fit: cover;
-    img {
-      width: 200px;
-    height: 100%;
-    object-fit: cover;
-    }
+    // img {
+    // width: 200px;
+    // height: 100%;
+    // object-fit: cover;
+    // }
   }
 }
 }
 a {
   text-decoration: none;
+  color: black;
 }
