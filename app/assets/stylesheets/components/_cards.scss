@@ -19,9 +19,14 @@
 
 .card-dog {
   margin: 20px;
+  width: 250px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: transform 0.3s;
+  h4 {
+    margin: 0 auto;
+    text-shadow:rgb(46, 46, 45) 0.5px 0 0px;
+  }
 }
 
 .card-dog:hover {
@@ -29,7 +34,7 @@
 }
 .card-dog > img {
   height: 100%;
-  width: 200px;
+  width:250px;
   object-fit: cover;
 }
 .card-dog h2 {
@@ -63,7 +68,7 @@
   display: flex;
   justify-content: space-between;
   .text {
-    padding: 20px;
+    padding: 10px;
   }
   #img-dog {
     width: 200px;

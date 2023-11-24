@@ -1,4 +1,13 @@
 class Dog < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :global_search,
+  against: [ :name, :user_id],
+  associated_against: {
+    user: [ :first_name, :last_name ]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
   has_one_attached :photo
   belongs_to :user
   has_many :bookings, dependent: :destroy
