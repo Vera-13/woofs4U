@@ -8,8 +8,34 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+.input-group {
+  input {
+   margin-right: none;
+  }
+}
 
-#form-inp{
-  display: block;
-  flex-direction: column;
+.subscription-form {
+  display: inline-flex;
+  border: 2px solid  rgb(213, 196, 123);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.rounded-input {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  width: 80%;
+  border-radius: 25px 0 0 25px;
+}
+
+.embedded-button {
+  border: none;
+  color: rgb(213, 196, 123);
+  padding: 10px 20px;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
 }

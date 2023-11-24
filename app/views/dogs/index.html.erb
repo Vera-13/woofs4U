@@ -4,17 +4,17 @@
 <h1>Discover our cute dogs</h1>
 
  <div class="row justify-content-center">
-  <div class="" id="form-inp">
-    <%= form_with url: dogs_path, method: :get, class: "input-group mb-3 d-flex" do %>
-    <div>
-      <%= text_field_tag :query,
+
+  <div class="">
+    <%= form_with url: dogs_path, method: :get, class: "subscription-form" do %>
+       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "rounded-input",
             placeholder: "Find a dog"
         %>
-    </div>
-    <div class=input-group-append>
-      <%= submit_tag "Search", name: "", class: "input-group-append input-group-text" %>
+
+    <div class=>
+      <%= submit_tag "Search", name: "", class: "embedded-button " %>
     </div>
     <% end %>
   </div>
