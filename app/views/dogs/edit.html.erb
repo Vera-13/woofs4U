@@ -3,9 +3,9 @@
   <h1>Edit Dog Profile</h1>
 
   <%= simple_form_for [@user, @dog] do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, input_html: { maxlength: 20 }, placeholder: "Maximum 20 characters" %>
   <%= f.input :address %>
-  <%= f.input :description %>
+  <%= f.input :description, input_html: { maxlength: 100 }, placeholder: "Maximum 100 characters" %>
   <%= f.input :photo, as: :file %>
   <%= f.submit class:'btn' %> |
   <%= link_to 'Show', @dog, class: 'btn' %> |
