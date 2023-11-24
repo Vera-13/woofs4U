@@ -29,7 +29,7 @@ h3 {
   color: rgb(210, 185, 75);
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: -68.893px;
   text-transform: uppercase;
   letter-spacing: 2px;
   word-spacing: 5px;
@@ -99,5 +99,10 @@ p {
 }
 
 .background_home {
-  background-color: rgb(0, 0, 0);
+  background-color: #373737;
+  height: 100vh;
+}
+
+.card-logo {
+width: 600px;
 }
