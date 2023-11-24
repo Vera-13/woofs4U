@@ -27,10 +27,10 @@
 .card-dog:hover {
   transform: scale(1.1); /* Scale the card by 10% on hover */
 }
-  .card-dog > img {
+.card-dog > img {
   height: 100%;
-    width: 200px;
-    object-fit: cover;
+  width: 200px;
+  object-fit: cover;
 }
 .card-dog h2 {
   font-size: 16px;
@@ -70,9 +70,15 @@
     height: 100%;
     object-fit: cover;
     img {
+<<<<<<< HEAD
       width: 200px;
       height: 100%;
       object-fit: cover;
+=======
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+>>>>>>> master
     }
   }
 }
